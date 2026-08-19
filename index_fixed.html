@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#5a189a">
+<title>Happy Birthday Janvi ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  min-height:100%;
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  overflow-y:auto;
+  font-family:Arial, "Poppins", sans-serif;
+  color:#fff;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255,143,171,.35), transparent 28%),
+    radial-gradient(circle at 85% 80%, rgba(199,125,255,.30), transparent 30%),
+    linear-gradient(135deg,#240046,#5a189a,#9d174d,#ff4d6d);
+  background-size:200% 200%;
+  animation:bgMove 14s ease infinite;
+}
+
+button{
+  font:inherit;
+}
+
+button,
+.balloon,
+.envelope,
+.gift{
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+
+@keyframes bgMove{
+  0%,100%{background-position:0 50%}
+  50%{background-position:100% 50%}
+}
+
+#app{
+  min-height:100vh;
+  padding:20px 0 50px;
+}
+
+.container{
+  position:relative;
+  z-index:5;
+  width:min(92%,720px);
+  min-height:68vh;
+  margin:8vh auto 40px;
+  padding:45px 25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:30px;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 25px 60px rgba(0,0,0,.30), inset 0 1px rgba(255,255,255,.20);
+  animation:appear .8s ease;
+}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(30px) scale(.97)}
+  to{opacity:1;transform:none}
+}
+
+h1{
+  font-size:clamp(2.2rem,8vw,4.5rem);
+  line-height:1.12;
+  margin-bottom:20px;
+  text-shadow:0 0 25px rgba(255,179,198,.75);
+}
+
+.subtitle{
+  max-width:600px;
+  font-size:clamp(1rem,3vw,1.25rem);
+  line-height:1.75;
+  margin-bottom:30px;
+  color:rgba(255,255,255,.94);
+}
+
+.excited-question{
+  max-width:600px;
+  margin:-8px 0 22px;
+  font-size:clamp(.95rem,2.8vw,1.12rem);
+  line-height:1.6;
+  font-weight:600;
+  color:rgba(255,255,255,.96);
+  text-shadow:0 0 14px rgba(255,179,198,.45);
+}
+
+.buttons{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  align-items:center;
+  min-height:75px;
+  width:100%;
+}
+
+button{
+  border:0;
+  outline:0;
+  color:#fff;
+  font-size:1.05rem;
+  font-weight:700;
+  padding:14px 30px;
+  border-radius:50px;
+  cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+button:hover{
+  transform:scale(1.06);
+}
+
+button:active{
+  transform:scale(.95);
+}
+
+#yesBtn,
+.next-btn,
+.video-btn{
+  background:linear-gradient(135deg,#ff477e,#ff006e);
+  box-shadow:0 8px 25px rgba(255,0,110,.40);
+}
+
+#yesBtn{
+  animation:pulse 2s infinite;
+}
+
+#noBtn{
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.35);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+@keyframes pulse{
+  50%{box-shadow:0 8px 38px rgba(255,0,110,.75)}
+}
+
+.hearts{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:1;
+}
+
+.heart{
+  position:absolute;
+  bottom:-50px;
+  animation:floatHeart linear forwards;
+  filter:drop-shadow(0 0 8px rgba(255,143,171,.8));
+}
+
+@keyframes floatHeart{
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  10%,90%{opacity:.8}
+  100%{transform:translateY(-115vh) rotate(360deg);opacity:0}
+}
+
+/* BALLOONS */
+.balloons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:24px;
+  margin:20px 0 25px;
+  max-width:520px;
+}
+
+.balloon{
+  position:relative;
+  width:100px;
+  height:125px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50% 50% 46% 46%;
+  font-size:62px;
+  cursor:pointer;
+  filter:drop-shadow(0 12px 12px rgba(0,0,0,.32));
+  animation:balloonFloat 2s ease-in-out infinite alternate;
+  user-select:none;
+}
+
+.balloon::after{
+  content:"";
+  position:absolute;
+  width:2px;
+  height:38px;
+  background:rgba(255,255,255,.65);
+  bottom:-30px;
+}
+
+.balloon:nth-child(1){animation-delay:0s}
+.balloon:nth-child(2){animation-delay:.25s}
+.balloon:nth-child(3){animation-delay:.5s}
+.balloon:nth-child(4){animation-delay:.75s}
+
+.balloon:hover{
+  transform:scale(1.1);
+}
+
+.balloon.popped{
+  animation:pop .35s forwards;
+  pointer-events:none;
+}
+
+@keyframes balloonFloat{
+  to{transform:translateY(-9px) rotate(3deg)}
+}
+
+@keyframes pop{
+  0%{transform:scale(1);opacity:1}
+  70%{transform:scale(1.45);opacity:.5}
+  100%{transform:scale(1.8);opacity:0}
+}
+
+#balloonMessage{
+  min-height:42px;
+  font-size:1.45rem;
+  font-weight:700;
+}
+
+/* LETTER */
+.teddy{
+  font-size:105px;
+  line-height:1;
+  animation:bob 2s ease-in-out infinite alternate;
+}
+
+@keyframes bob{
+  to{transform:translateY(-10px) rotate(2deg)}
+}
+
+.envelope{
+  font-size:88px;
+  line-height:1;
+  margin:18px 0;
+  cursor:pointer;
+  animation:envelopePulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes envelopePulse{
+  to{transform:scale(1.10) rotate(3deg)}
+}
+
+.letter-page{
+  justify-content:flex-start;
+  padding-top:35px;
+}
+
+.letter-page h1{
+  font-size:clamp(2rem,7vw,3.5rem);
+}
+
+.letter-text{
+  display:none;
+  width:100%;
+  max-width:600px;
+  max-height:52vh;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  white-space:pre-line;
+  padding:25px;
+  margin:15px 0 20px;
+  border-radius:20px;
+  background:#fff;
+  color:#64154a;
+  line-height:1.85;
+  text-align:left;
+  box-shadow:0 15px 35px rgba(0,0,0,.28);
+  scrollbar-width:thin;
+}
+
+.letter-text::-webkit-scrollbar{
+  width:7px;
+}
+
+.letter-text::-webkit-scrollbar-thumb{
+  background:#ff5c8a;
+  border-radius:10px;
+}
+
+.next-btn{
+  display:none;
+}
+
+/* GIFT */
+.gift{
+  font-size:125px;
+  line-height:1;
+  margin:25px 0;
+  cursor:pointer;
+  animation:giftPulse 1.3s infinite alternate;
+}
+
+@keyframes giftPulse{
+  to{transform:scale(1.1) rotate(-3deg)}
+}
+
+/* VIDEO */
+.video-btn{
+  margin-top:10px;
+}
+
+.birthday-video{
+  width:100%;
+  max-width:650px;
+  aspect-ratio:16/9;
+  margin-top:24px;
+  border-radius:20px;
+  overflow:hidden;
+  background:#111;
+  box-shadow:0 18px 45px rgba(0,0,0,.35);
+  animation:appear .5s ease;
+}
+
+.birthday-video video{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+  background:#000;
+}
+
+
+.video-note{
+  max-width:500px;
+  margin-top:20px;
+  font-size:.92rem;
+  line-height:1.6;
+  opacity:.8;
+}
+
+/* FINAL */
+.final-heart{
+  font-size:90px;
+  animation:finalHeart 1.2s infinite alternate;
+}
+
+@keyframes finalHeart{
+  to{transform:scale(1.15)}
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  #app{
+    padding:10px 0 35px;
+  }
+
+  .container{
+    width:92%;
+    min-height:80vh;
+    margin:4vh auto 30px;
+    padding:32px 18px;
+    border-radius:24px;
+  }
+
+  h1{
+    font-size:2.35rem;
+  }
+
+  .subtitle{
+    font-size:1rem;
+    line-height:1.7;
+  }
+
+  .buttons{
+    gap:12px;
+  }
+
+  button{
+    padding:13px 24px;
+    font-size:1rem;
+  }
+
+  .balloons{
+    gap:18px;
+  }
+
+  .balloon{
+    width:78px;
+    height:100px;
+    font-size:50px;
+  }
+
+  .teddy{
+    font-size:88px;
+  }
+
+  .envelope{
+    font-size:78px;
+  }
+
+  .letter-page{
+    justify-content:flex-start;
+  }
+
+  .letter-text{
+    max-height:50vh;
+    font-size:.96rem;
+    padding:20px;
+    line-height:1.75;
+  }
+
+  .gift{
+    font-size:105px;
+  }
+}
+
+@media(max-width:380px){
+  h1{font-size:2rem}
+  .balloon{width:68px;height:88px;font-size:43px}
+  .letter-text{font-size:.9rem}
+}
+
+/* Reduce animation for users who prefer it */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div id="app"></div>
+
+<script>
+/* =========================================
+   JANVI'S COMPLETE BIRTHDAY SURPRISE
+   ONE HTML FILE
+========================================= */
+
+/* -----------------------------
+   SETTINGS YOU CAN CHANGE
+----------------------------- */
+
+const VIDEO_LINK = "birthday-video-fixed.mp4";
+const YOUR_NAME = "With lots of love 💕";
+
+/* Change the letter here whenever you want */
+const LETTER = `Happy Birthday, Janvi ❤️
+
+You make my life brighter,
+happier and more beautiful.
+
+I hope your special day is filled
+with smiles, happiness, love
+and beautiful memories.
+
+You deserve all the happiness
+in the world.
+
+Happy Birthday once again! 🎂❤️
+
+${YOUR_NAME}`;
+
+/* ----------------------------- */
+
+const app = document.getElementById("app");
+let heartTimer = null;
+
+function startHearts(){
+  if(heartTimer) clearInterval(heartTimer);
+
+  const old = document.querySelector(".hearts");
+  if(old) old.remove();
+
+  const box = document.createElement("div");
+  box.className = "hearts";
+  document.body.appendChild(box);
+
+  const symbols = ["❤️","💖","💕","💗","💓","✨","🌸"];
+
+  function addHeart(){
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+    h.style.left = Math.random()*100 + "%";
+    h.style.fontSize = (15 + Math.random()*22) + "px";
+
+    const duration = 5 + Math.random()*5;
+    h.style.animationDuration = duration + "s";
+
+    box.appendChild(h);
+
+    setTimeout(() => h.remove(), duration*1000);
+  }
+
+  for(let i=0;i<8;i++){
+    setTimeout(addHeart, i*220);
+  }
+
+  heartTimer = setInterval(addHeart, 500);
+}
+
+function pageShell(content){
+  app.innerHTML = `<main class="container page">${content}</main>`;
+  startHearts();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* =========================================
+   PAGE 1
+========================================= */
+
+function home(){
+  pageShell(`
+    <h1>🎉 Happy Birthday Janvi ❤️</h1>
+
+    <p class="subtitle">
+      Today is all about you.<br>
+      I have a little surprise waiting for you... ✨
+    </p>
+
+    <p class="excited-question">
+      Are you really excited to know what the surprise is? 💕
+    </p>
+
+    <div class="buttons">
+      <button id="yesBtn">💖 Yes</button>
+      <button id="noBtn">🙈 No</button>
+    </div>
+  `);
+
+  document.getElementById("yesBtn").onclick = balloonsPage;
+
+  const no = document.getElementById("noBtn");
+
+  function escapeNo(event){
+    if(event) event.preventDefault();
+
+    const width = no.offsetWidth;
+    const height = no.offsetHeight;
+    const padding = 15;
+
+    const maxX = Math.max(padding, window.innerWidth-width-padding);
+    const maxY = Math.max(padding, window.innerHeight-height-padding);
+
+    let x = padding + Math.random() * Math.max(1,maxX-padding);
+    let y = padding + Math.random() * Math.max(1,maxY-padding);
+
+    if(event && typeof event.clientX === "number"){
+      let tries = 0;
+
+      while(
+        Math.hypot(
+          x + width/2 - event.clientX,
+          y + height/2 - event.clientY
+        ) < 140 && tries < 30
+      ){
+        x = padding + Math.random() * Math.max(1,maxX-padding);
+        y = padding + Math.random() * Math.max(1,maxY-padding);
+        tries++;
+      }
+    }
+
+    no.style.position = "fixed";
+    no.style.left = x + "px";
+    no.style.top = y + "px";
+    no.style.zIndex = "9999";
+    no.style.transition = "left .12s ease, top .12s ease, transform .12s ease";
+    no.style.transform = "scale(.82)";
+
+    setTimeout(() => {
+      no.style.transform = "scale(1)";
+    },120);
+  }
+
+  /* Desktop */
+  no.addEventListener("mouseenter", escapeNo);
+
+  /* Mobile */
+  no.addEventListener("touchstart", escapeNo, {passive:false});
+
+  /* Extra pointer support */
+  no.addEventListener("pointerdown", event => {
+    if(event.pointerType === "touch"){
+      escapeNo(event);
+    }
+  });
+
+  /* Never allow No to activate */
+  no.addEventListener("click", event => {
+    event.preventDefault();
+    event.stopPropagation();
+    escapeNo(event);
+  });
+}
+
+/* =========================================
+   PAGE 2 — BALLOONS
+========================================= */
+
+function balloonsPage(){
+  pageShell(`
+    <h1>🎈 A Little Surprise 🎈</h1>
+
+    <p class="subtitle">
+      Pop all four balloons to unlock
+      your special message, Janvi ❤️
+    </p>
+
+    <div class="balloons">
+      <div class="balloon" data-message="You ❤️">🎈</div>
+      <div class="balloon" data-message="Make ✨">🎈</div>
+      <div class="balloon" data-message="My 🌸">🎈</div>
+      <div class="balloon" data-message="Life Beautiful 💖">🎈</div>
+    </div>
+
+    <p id="balloonMessage">Tap the balloons!</p>
+  `);
+
+  const balloons = document.querySelectorAll(".balloon");
+  const message = document.getElementById("balloonMessage");
+
+  let popped = 0;
+
+  balloons.forEach(balloon => {
+    balloon.addEventListener("click", () => {
+      if(balloon.classList.contains("popped")) return;
+
+      balloon.classList.add("popped");
+      message.textContent = balloon.dataset.message;
+      popped++;
+
+      if(popped === 4){
+        message.textContent = "You Make My Life Beautiful ❤️";
+
+        setTimeout(() => {
+          letterPage();
+        },1400);
+      }
+    });
+  });
+}
+
+/* =========================================
+   PAGE 3 — LETTER
+========================================= */
+
+function letterPage(){
+  pageShell(`
+    <div class="teddy">🧸</div>
+
+    <h1>A Letter For You 💌</h1>
+
+    <div class="envelope" id="envelope">💌</div>
+
+    <p>Tap the letter ❤️</p>
+
+    <div id="letterText" class="letter-text"></div>
+
+    <button id="nextBtn" class="next-btn">
+      Next ➜
+    </button>
+  `);
+
+  const envelope = document.getElementById("envelope");
+  const output = document.getElementById("letterText");
+  const next = document.getElementById("nextBtn");
+
+  envelope.addEventListener("click", () => {
+    if(output.dataset.opened === "true") return;
+
+    output.dataset.opened = "true";
+    output.style.display = "block";
+    output.textContent = "";
+
+    let index = 0;
+
+    function typeWriter(){
+      if(index < LETTER.length){
+        output.textContent += LETTER.charAt(index);
+        index++;
+
+        /* Keep the newest text visible while typing */
+        output.scrollTop = output.scrollHeight;
+
+        setTimeout(typeWriter,28);
+      }else{
+        next.style.display = "inline-block";
+      }
+    }
+
+    typeWriter();
+  });
+
+  next.addEventListener("click", giftPage);
+}
+
+/* =========================================
+   PAGE 4 — GIFT
+========================================= */
+
+function giftPage(){
+  pageShell(`
+    <h1>🎁 One More Surprise</h1>
+
+    <p class="subtitle">
+      This is your birthday gift, Janvi ❤️
+    </p>
+
+    <div class="gift" id="gift">🎁</div>
+
+    <p>Tap the gift 🎀</p>
+  `);
+
+  document.getElementById("gift").addEventListener("click", videoPage);
+}
+
+/* =========================================
+   PAGE 5 — VIDEO
+========================================= */
+
+function videoPage(){
+  pageShell(`
+    <h1>🎥 Your Birthday Surprise ❤️</h1>
+
+    <button class="video-btn" id="videoBtn">
+      ❤️ Open Your Surprise
+    </button>
+  `);
+
+  document.getElementById("videoBtn").addEventListener("click", async () => {
+    const button = document.getElementById("videoBtn");
+
+    if (document.getElementById("birthdayVideo")) return;
+
+    const player = document.createElement("div");
+    player.id = "birthdayVideo";
+    player.className = "birthday-video";
+
+    player.innerHTML = `
+      <video
+        controls
+        autoplay
+        playsinline
+        preload="auto"
+        title="Janvi's Birthday Surprise">
+        <source src="${VIDEO_LINK}" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+    `;
+
+    button.style.display = "none";
+    button.parentNode.insertBefore(player, button.nextSibling);
+    player.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    const video = player.querySelector("video");
+    try {
+      await video.play();
+    } catch (error) {
+      // If autoplay is restricted, the video controls remain available.
+    }
+  });
+}
+
+/* Start */
+home();
+</script>
+</body>
+</html>
